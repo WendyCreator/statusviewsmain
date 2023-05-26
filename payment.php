@@ -52,7 +52,7 @@ if($plan){
               </div>
               <div class="form-group my-4 d-none">
                   <label for="last-name" class="form-label">Last Name</label>
-                     <input type="text" id="last-name" class="form-control shadow-sm p-2" required  />
+                     <input type="text" id="last-name" class="form-control shadow-sm p-2" />
               </div>
 
               <div class="row">

@@ -6,6 +6,8 @@ require_once 'config.php';
     header("Location:auth-lock-screen");
 }
 ?>
+<?php 
+  if(isset($_SESSION['use%#5log#&45@ger%$#pa'])){ ?>
 
     <body data-sidebar="dark">
 
@@ -348,3 +350,4 @@ require_once 'config.php';
 
 <!-- Mirrored from themesbrand.com/skote-symfony/layouts/ecommerce-add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Apr 2022 02:05:17 GMT -->
 </html>
+<?php } ?>

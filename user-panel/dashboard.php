@@ -5,7 +5,8 @@
     header("Location:auth-lock-screen");
 }
 ?>
-
+<?php 
+  if(isset($_SESSION['use%#5log#&45@ger%$#pa'])){ ?>
     <body data-sidebar="dark">
 
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
@@ -896,3 +897,5 @@
 
 <!-- Mirrored from themesbrand.com/skote-symfony/layouts/contacts-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Apr 2022 02:05:42 GMT -->
 </html>
+
+<?php } ?>

@@ -12,12 +12,15 @@
   <meta content="Whatsapp status views, contact gain, whatsapp groups, business development, Growing SMEs, gaining more contacts, selling products to your contacts, increasing your whatsapp views, improving your social media presence" name="keywords">
 
  
+
  <meta property="og:locale" content="en_US" />
  <meta property="og:type" content="article" />
  <meta property="og:title" content="Mutual Whatsapp Status Viewer and Contact Gain" />
  <meta property="og:description" content="Mutual Whatsapp Status Views provides WhatsApp users with a special service that gives them access to a variety of contacts for use in their whatsapp status updates and allows them to access and join any available whatsapp groups of their choice." />
  <meta property="og:site_name" content="contactsgain.com"/>
+ 
  <meta property="article:published_time" content="date" />
+
  <!-- <meta property="og:image" content="https://contactsgain.com" /> -->
  <meta property="og:image" content="assets/img/hero-carousel/status2.jpg" />
  <meta property="og:image:width" content="412" />
@@ -27,6 +30,7 @@
   <!-- Favicons -->
   <link href="assets/img/logo2.png" rel="icon">
   <link href="assets/img/logo2.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

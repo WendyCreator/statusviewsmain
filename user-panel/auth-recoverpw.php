@@ -20,6 +20,8 @@
     color: rgb(12, 120, 12);
 }
 </style>
+<?php 
+  if(isset($_SESSION['use%#5log#&45@ger%$#pa'])){ ?>
     <body>
         <div class="account-pages my-5 pt-sm-5">
             <div class="container">
@@ -173,3 +175,4 @@ psw.addEventListener('input', (e)=>{
 
 <!-- Mirrored from themesbrand.com/skote-symfony/layouts/auth-recoverpw.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Apr 2022 02:05:44 GMT -->
 </html>
+<?php } ?>

@@ -134,6 +134,6 @@ if(isset($_SESSION['use%#5log#&45@ger%$#pa']) and $_SESSION['use%#5log#&45@ger%$
         <!-- App js -->
         <script src="assets/js/app.js"></script>
     </body>
-<?php unset($_SESSION['error']) ?>
-<!-- Mirrored from themesbrand.com/skote-symfony/layouts/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Apr 2022 02:04:42 GMT -->
+<?php unset($_SESSION['%$#error23$%$']) ?>
+
 </html>

@@ -1,3 +1,6 @@
+<?php 
+    session_start()
+    ?>
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +26,4 @@
     <script src="ckeditorfull/ckeditor.js"></script>
 
     </head>
-    <?php 
-    // include_once 'config.php'; 
-    session_start()
-    ?>
+ 

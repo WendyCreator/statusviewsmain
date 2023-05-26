@@ -6,7 +6,8 @@
 
 ?>
 
-
+<?php 
+  if(isset($_SESSION['use%#5log#&45@ger%$#pa'])){ ?>
     <body>
         <div class="account-pages my-5 pt-sm-5">
             <div class="container">
@@ -123,3 +124,4 @@
 <?php unset($_SESSION['error']) ?>
 <!-- Mirrored from themesbrand.com/skote-symfony/layouts/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Apr 2022 02:04:42 GMT -->
 </html>
+<?php } ?>

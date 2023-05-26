@@ -410,7 +410,7 @@ platform, or have a question about a specific contact, we're here to assist you
     </section><!-- End Features Section -->
 
     <!-- Group Section -->
-<section class="container">
+<section class="container mx-auto">
 
 <div class="row">
   <div class="col-12">
@@ -425,46 +425,74 @@ platform, or have a question about a specific contact, we're here to assist you
   
             
     ?>
+    <style>
+      @media screen and (max-width: 700px){
+        .gropu{
+      /* max-width: 250px; */
+      /* margin: auto; */
+    }
+      }
+   
+    </style>
 
-<section class="col-12 col-md-6 col-lg-3">
-                    <div class="card my-4 shadow-sm" data-aos="fade-up">
-                        <div class="card-body" data-aos="fade-up" data-aos-delay="<?=$fade+=100?>">
-                        <div class="mb-4">
+<section class="col-6 col-m-6 col-lg-3 mx-aut">
+                    <div class="my shadow-lg p-3 bg-dark gropu" data-aos="fade-up" style="width:fit-content;">
+                        <div class="body" data-aos="fade-up" data-aos-delay="<?=$fade+=100?>">
+                        <div class="mb">
+                        <h4 class="text-muted font-bold"> <?=$row['gcategory']?></h4>
                                             <?php if($row['dstatus'] == 'active'){?>
-                                        <div class="alert alert-success" role="alert">
+                                        <div class="alert alert-success d-none" role="alert">
                                                 <i class="mdi mdi-check-all me-2"></i>
                                                 Active
                                             </div>
                                             <?php }
                                             elseif($row['dstatus'] == 'suspended'){?>
-                                        <div class="alert alert-warning" role="alert">
+                                        <div class="alert alert-warning d-none" role="alert">
                                         <i class="mdi mdi-alert-outline me-2"></i>
                                                 Suspended
                                             </div>
                                             <?php }
                                              elseif($row['dstatus'] == 'terminated'){?>
-                                        <div class="alert alert-danger" role="alert">
+                                        <div class="alert alert-danger d-none" role="alert">
                                         <i class="mdi mdi-block-helper me-2"></i>
                                                 Terminated
                                             </div>
                                             <?php }?>
-                                            <img class="img-fluid rounded avatar-sm" src="./admin-control/<?php echo ($row['gimage'] != 'no image')? $row['gimage'] :'assets/img/images/26.'?>" alt="">
+                                            <img class="img-fluid rounded avatar-s" src="./admin-control/<?php echo ($row['gimage'] != 'no image')? $row['gimage'] :''?>" alt="">
                                         </div>
-                                        <h5 class="font-size-15 mb-1 fullname"><a href="javascript: void(0);" class="text-dark"><?= $row['gtitle']?></a></h5>
-                                        <p class="text-muted">Group Description:  <?=limit_text($row['gdesc'])?></p>
-                                        <p class="text-muted">Group Admin:  <?=$row['groupadmin']?></p>
-                                        <p class="text-muted">Group Category:  <?=$row['gcategory']?></p>
+                                        <!-- <h5 class="font-size-15 mb-1 fullname"><a href="javascript: void(0);" class="text-dark"><?= $row['gtitle']?></a></h5> -->
+                                        <p class="text-muted">Group Title:  <?=limit_text($row['gtitle'])?></p>
 
-                                        <div>
-                                            <a href="<?=$row['grouplink']?>" class="btn btn-primary m-2" target="_blank">Join Group</a>
+                                        <p>
+  
+  <button class="btn btn-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?=$row['id']?>" aria-expanded="false" aria-controls="collapseExample">
+    Show More...
+  </button>
+</p>
+<div class="collapse bg-light" id="collapseExample<?=$row['id']?>">
+  <div class="card card-body">
+  <p class="text-muted">Group Description:  <?=$row['gdesc']?></p> 
+  <p class="text-muted">Group Admin:  <?=$row['groupadmin']?></p>
+
+    <div>
+                                            <a href="<?=$row['grouplink']?>" class="btn btn-success m-2 btn-sm" target="_blank">Join Group</a>
                                             
                                         </div>
+  </div>
+</div>
+                                       
+
+                                        
                         </div>
                     </div>
                 </section>
 
                 <?php } } ?>
      
+    <div>
+                                            <a href="groups" class="btn btn-success btn-lg m-2">See More Groups</a>
+                                            
+                                        </div>
             </div>
            </div>
         </div>
@@ -711,6 +739,16 @@ concerns, our dedicated support team is here to help</p>
   
     </section>
     <!-- Timer Section -->
+
+    <!-- contact counting  -->
+    <section>
+      <?php 
+       $sql = formQuery("SELECT COUNT(id) FROM ceecontacts");
+       $row = $sql->fetch_assoc();
+      ?>
+      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success"><?=$row['COUNT(id)']?></span> Contacts. And Counting...</h2>
+    </section>
+    <!-- contact counting  -->
 
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
@@ -1028,7 +1066,9 @@ concerns, our dedicated support team is here to help</p>
           
             </div> -->
            <div class="container">
+            
             <img src="assets/img/images/svbanner.png" alt="" class="img-fluid">
+
            <!-- <form action="payment" method="post">
               <div class="form-group my-4">
                 <label for="plan" class="form-label">Select Plan:</label>

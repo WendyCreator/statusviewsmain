@@ -108,6 +108,7 @@
                     <li><a href="view-contacts" key="t-inbox">View Contacts</a></li>
                     <li><a href="view-groups" key="t-inbox">View Groups</a></li>
                     <li><a href="download" key="t-inbox">Download Contacts</a></li>
+                    <li><a href="report" key="t-inbox">Report a Contact</a></li>
                     <!-- <li><a href="view-quotes" key="t-read-email">View Quotes</a></li> -->
                 </ul>
             </li>
