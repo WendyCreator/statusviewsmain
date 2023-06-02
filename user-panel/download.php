@@ -1,6 +1,4 @@
- 
- 
- <?php include_once 'head.php';
+<?php include_once 'head.php';
   if(!isset($_SESSION['use%#5log#&45@ger%$#pa'])){
     header("Location:index");
 } elseif($_SESSION['use%#5log#&45@ger%$#pa'] != true){

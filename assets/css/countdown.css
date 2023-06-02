@@ -125,3 +125,9 @@
     text-transform: uppercase;
     display: inline-block;
 }
+
+@media screen and (max-width: 750px) {
+    #countdown .labels li{
+     display: none;
+    } 
+}

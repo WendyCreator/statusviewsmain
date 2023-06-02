@@ -1,4 +1,3 @@
-
 <?php include_once 'head.php';
 include_once 'config.php';
   if(!isset($_SESSION['use%#5log#&45@ger%$#pa'])){
@@ -114,7 +113,7 @@ include_once 'config.php';
                                 </div>
                                 <!-- end card -->
                             </div>
-                            <input type="search" class="form-control" placeholder='Filter Staffs by name here...' id='search'>
+                            <input type="search" class="form-control" placeholder='Filter Groups by name here...' id='search'>
                                                 </div>
                                                 
                                             <!-- </div> -->

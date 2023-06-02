@@ -70,6 +70,33 @@ include_once 'admin-control/config.php';
     </section><!-- End Featured Services Section -->
 
 <!-- About was here -->
+  <!-- Timer Section -->
+  <section class="timer">
+    <h2 class="display-6 text-center my-3 text-success">Join The Campaign Now For 50% Less!</h2>
+    <h3 class="mx-3">Hurry! Promo Ends In... </h3>
+     <div id="countdown">
+        <div id='tiles'></div>
+        <div class="labels">
+          <li>Days</li>
+          <li>Hours</li>
+          <li>Mins</li>
+          <li>Secs</li>
+        </div>
+       </div>
+  
+    </section>
+    <!-- Timer Section -->
+
+    <!-- contact counting  -->
+    <section>
+      <?php 
+       $sql = formQuery("SELECT COUNT(id) FROM ceecontacts");
+       $row = $sql->fetch_assoc();
+      ?>
+      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success"><?=$row['COUNT(id)']?></span> Contacts. And Counting...</h2>
+    </section>
+    <!-- contact counting  -->
+<!-- About was here -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients d-none">
@@ -119,10 +146,15 @@ your life with others.</p>
     </section><!-- End Call To Action Section -->
 
     <!-- ======= Show Steps Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <section id="featured-services" class="featured-services ">
       <div class="container">
-          <h2 class="my-4">The Four Simple Steps to Follow</h2>
-        <div class="row gy-4">
+          <div class="my-4 bt bt-lg bt-success text-center shadow-sm py-4"  data-bs-toggle="collapse" data-bs-target="#showsteps" aria-expanded="false" aria-controls="showsteps">
+            <h2>
+            Click For The Four Simple Steps to Follow
+            </h2>
+            <p class="">&dArr;</p>
+          </div>
+        <div class="row gy-4 collapse" id="showsteps">
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
             <div class="service-item position-relative">
@@ -156,8 +188,8 @@ your life with others.</p>
             </div>
           </div><!-- End Service Item -->
 
+          <a class="btn btn-success px-5 py-3 m-auto mt-3" href="#pricing">Get Started</a>
         </div>
-        <a class="btn btn-success px-5 py-3 m-auto mt-3" href="#pricing">Get Started</a>
 
       </div>
     </section><!-- End Show Steps Section -->
@@ -413,8 +445,9 @@ platform, or have a question about a specific contact, we're here to assist you
 <section class="container mx-auto">
 
 <div class="row">
-  <div class="col-12">
+  <div  class="col-12 my-4 bt bt-lg bt-success text-center shadow-sm py-4"  data-bs-toggle="collapse" data-bs-target="#showgroups" aria-expanded="false" aria-controls="showgroups">
     <h2 class="text-center text-success">Join Any Group of your choice</h2>
+    <p>&dArr;</p>
   </div>
 <?php
     $sql = formQuery("SELECT * FROM ceegroups LIMIT 4");
@@ -435,7 +468,7 @@ platform, or have a question about a specific contact, we're here to assist you
    
     </style>
 
-<section class="col-6 col-m-6 col-lg-3 mx-aut">
+<section class="col-6 col-m-6 col-lg-3 mx-aut collapse" id="showgroups">
                     <div class="my shadow-lg p-3 bg-dark gropu" data-aos="fade-up" style="width:fit-content;">
                         <div class="body" data-aos="fade-up" data-aos-delay="<?=$fade+=100?>">
                         <div class="mb">
@@ -505,13 +538,14 @@ platform, or have a question about a specific contact, we're here to assist you
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
+        <div  class="section-header my-4 bt bt-lg bt-success text-center shadow-sm py-4"  data-bs-toggle="collapse" data-bs-target="#showservices" aria-expanded="false" aria-controls="showservices">
           <h2>Our Services</h2>
           <p>Our service has the potential to enhance the WhatsApp experience for users
 around the world</p>
+<h1 class="text-center font-bold">&dArr;</h1>
         </div>
 
-        <div class="row gy-5">
+        <div class="row gy-5 collapse" id="showservices">
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
@@ -630,9 +664,16 @@ concerns, our dedicated support team is here to help</p>
     </section><!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
+    
+    <div  class="section-header my-4 bt bt-lg bt-success text-center shadow-sm py-4"  data-bs-toggle="collapse" data-bs-target="#testimonials" aria-expanded="false" aria-controls="testimonials">
+          <h2>Click for Testimonials</h2>
+          <p>See what our clients are saying about us...</p>
+<h2 class="text-center font-bold">&dArr;</h2>
+        </div>
 
+    <section id="testimonials" class="testimonials collapse" >
+      
+      <div class="container" data-aos="fade-up">
         <div class="testimonials-slider swiper">
           <div class="swiper-wrapper">
 
@@ -723,32 +764,7 @@ concerns, our dedicated support team is here to help</p>
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- Timer Section -->
-    <section class="timer">
-    <h2 class="display-6 text-center my-3 text-success">Join The Campaign Now For 50% Less!</h2>
-    <h3 class="mx-3">Hurry! Promo Ends In... </h3>
-     <div id="countdown">
-        <div id='tiles'></div>
-        <div class="labels">
-          <li>Days</li>
-          <li>Hours</li>
-          <li>Mins</li>
-          <li>Secs</li>
-        </div>
-       </div>
   
-    </section>
-    <!-- Timer Section -->
-
-    <!-- contact counting  -->
-    <section>
-      <?php 
-       $sql = formQuery("SELECT COUNT(id) FROM ceecontacts");
-       $row = $sql->fetch_assoc();
-      ?>
-      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success"><?=$row['COUNT(id)']?></span> Contacts. And Counting...</h2>
-    </section>
-    <!-- contact counting  -->
 
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
@@ -982,7 +998,14 @@ concerns, our dedicated support team is here to help</p>
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+
+    <div  class="section-header my-4 bt bt-lg bt-success text-center shadow-sm py-4"  data-bs-toggle="collapse" data-bs-target="#team" aria-expanded="false" aria-controls="team">
+          <h2>Click to Meet Our Team</h2>
+          <p>See what our clients are saying about us...</p>
+<h2 class="text-center font-bold">&dArr;</h2>
+        </div>
+
+    <section id="team" class="team collapse">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">

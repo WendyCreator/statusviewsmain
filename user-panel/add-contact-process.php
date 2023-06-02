@@ -51,6 +51,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $check = formQuery("SELECT * FROM ceecontacts WHERE dpassword = '$password'");
         if($check->num_rows > 0){
             $_SESSION['contactmsg'] = "Your number has already been recorded!";
+            
         }else{
 
      
@@ -58,12 +59,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         $ggid = strtolower(str_replace(' ', '_',  $name));
         $userid = $ggid.date("Ymdhis").rand(10202, 19202);
-        $password = md5($password);
+        // $password = md5($password);
         $phone = $code.$phone;
         
         //run SQL here.... 
-    
         
+       
         $sql = formQuery("INSERT INTO ceecontacts SET fullname ='$name', contactid ='$userid', dphone= '$phone', demail= '$email', dplan= '$plan', dpassword= '$password'");
         
         if($sql){
