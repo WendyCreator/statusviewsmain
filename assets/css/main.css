@@ -103,6 +103,8 @@ h6 {
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
+
+
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -1134,6 +1136,25 @@ section {
   .hero-static .btn-get-started,
   .hero-static .btn-watch-video {
     font-size: 14px;
+  }
+}
+
+.breathe{
+  /* background-color: red; */
+  display: inline-block;
+  animation: breathe 1s ease-in 2s infinite alternate-reverse;
+ 
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1,1);
+    background-color: rgba(0,150,0,0.5);
+  }
+
+  100% {
+    transform: scale(1.2,1.2);
+    background-color: rgba(0,150,0,0.8);
   }
 }
 

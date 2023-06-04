@@ -72,7 +72,7 @@ include_once 'admin-control/config.php';
 <!-- About was here -->
   <!-- Timer Section -->
   <section class="timer">
-    <h2 class="display-6 text-center my-3 text-success">Join The Campaign Now For 50% Less!</h2>
+    <h2 class="display-6 text-center my-3 text-success">Join The Campaign Now For 20% Less!</h2>
     <h3 class="mx-3">Hurry! Promo Ends In... </h3>
      <div id="countdown">
         <div id='tiles'></div>
@@ -92,8 +92,9 @@ include_once 'admin-control/config.php';
       <?php 
        $sql = formQuery("SELECT COUNT(id) FROM ceecontacts");
        $row = $sql->fetch_assoc();
+      //  $row['COUNT(id)'];
       ?>
-      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success"><?=$row['COUNT(id)']?></span> Contacts. And Counting...</h2>
+      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success breathe"><?= '23,586' ?></span> Contacts. And Counting...</h2>
     </section>
     <!-- contact counting  -->
 <!-- About was here -->
@@ -782,11 +783,12 @@ concerns, our dedicated support team is here to help</p>
 
               <div class="pricing-header">
                 <h3>Basic Plan</h3>
-                <h4><sup>&#8358;</sup>1,000<span></span></h4>
+                <h5 class="text-ligh display-6" style="color:#ccc;"><del><sup>&#8358;</sup>1,000</del></h5>
+                <h4><sup>&#8358;</sup>800<span></span></h4>
               </div>
 
               <ul>
-                <li><i class="bi bi-dot"></i> <span>A one time &#8358;1,000 fee</span></li>
+                <li><i class="bi bi-dot"></i> <span>A one time &#8358;800 fee</span></li>
                 <li><i class="bi bi-dot"></i> <span>Name Only, maximum of 8 characters; no spacing</span></li>
                 <li><i class="bi bi-dot"></i> <span>For Personal use</span></li>
                 <li class=""><i class="bi bi-dot"></i> <span>Access to mutual unlimited contact file</span></li>
@@ -806,11 +808,12 @@ concerns, our dedicated support team is here to help</p>
 
               <div class="pricing-header">
                 <h3>Advance Plan</h3>
-                <h4><sup>&#8358;</sup>1,500<span></span></h4>
+                <h5 class="text-ligh display-6" style="color:#ccc;"><del><sup>&#8358;</sup>1,500</del></h5>
+                <h4><sup>&#8358;</sup>1,200<span></span></h4>
               </div>
 
               <ul>
-              <li><i class="bi bi-dot"></i> <span>A one time &#8358;1,500 fee</span></li>
+              <li><i class="bi bi-dot"></i> <span>A one time &#8358;1,200 fee</span></li>
                 <li><i class="bi bi-dot"></i> <span>Unlimited length name input; with spacing</span></li>
                 <li><i class="bi bi-dot"></i> <span>For Business use</span></li>
                 <li class=""><i class="bi bi-dot"></i> <span>Access to mutual unlimited contact file</span></li>
@@ -830,15 +833,16 @@ concerns, our dedicated support team is here to help</p>
 
               <div class="pricing-header">
                 <h3>Premium Plan</h3>
-                <h4><sup>&#8358;</sup>2,000<span></span></h4>
+                <h5 class="text-ligh display-6" style="color:#ccc;"><del><sup>&#8358;</sup>2,000</del></h5>
+                <h4><sup>&#8358;</sup>1,600<span></span></h4>
               </div>
 
               <ul>
-              <li><i class="bi bi-dot"></i> <span>A one time &#8358;2,000 fee</span></li>
+              <li><i class="bi bi-dot"></i> <span>A one time &#8358;1,600 fee</span></li>
                 <li><i class="bi bi-dot"></i> <span>Unlimited length name input; with spacing</span></li>
                 <li><i class="bi bi-dot"></i> <span>For Business use</span></li>
                 <li class=""><i class="bi bi-dot"></i> <span>Access to mutual unlimited contact file</span></li>
-                <li class=""><i class="bi bi-dot"></i> <span>Can Only add five(10) group</span></li>
+                <li class=""><i class="bi bi-dot"></i> <span>Can Only add ten(10) group</span></li>
                 <li class=""><i class="bi bi-dot"></i> <span>Your Contact is automaticaly saved with your desired inputed name</span></li>
               </ul>
 
