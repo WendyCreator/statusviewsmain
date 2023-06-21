@@ -105,6 +105,9 @@ if(isset($_SESSION['use%#5log#&45@ger%$#pa']) and $_SESSION['use%#5log#&45@ger%$
                                         <div class="mt-4 text-center">
                                             <a href="recoverpsw" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
                                         </div>
+                                        <div class="mt-4 text-center">
+                                            <a href="../index" class="btn btn-success"><i class="me-1"></i> Back Home</a>
+                                        </div>
                                     </form>
                                 </div>
             

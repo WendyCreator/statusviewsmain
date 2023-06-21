@@ -68,6 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <a href='https://contactsgain.com/user-panel/index'>Click to login now</a>
             ";
             // header('Location:add-contact.php');
+            header('Location:../user-panel/login');
 
             // sendMail($email, $subject, $message);
             

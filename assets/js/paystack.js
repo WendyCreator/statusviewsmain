@@ -15,7 +15,7 @@ const msg = document.querySelector('#msg');
       let handler = PaystackPop.setup({
         key: 'pk_live_2a7fc5a826139554484987f8bd8335a85d9a7856', // Replaced with your public key
         email: document.getElementById("email-address").value,
-        amount:(document.getElementById("amount").value * 0.8) * 100,
+        amount:(document.getElementById("amount").value) * 100,
         // ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
         // label: "Optional string that replaces customer email"
         onClose: function(){
@@ -24,6 +24,7 @@ const msg = document.querySelector('#msg');
         callback: function(response){
           let message = 'Payment complete! Reference: ' + response.reference;
           msg.innerText = message;
+          window.location.replace('paidland')
 
       const userform = document.querySelector('#user-details');
       const formdata = new FormData(userform);
@@ -34,6 +35,7 @@ const msg = document.querySelector('#msg');
       fetch('admin-control/saved-verified-process', options)
       .then(res=>res.json())
       .then(data=>msg.innerText=data)
+      // .then()
           
         }
       });

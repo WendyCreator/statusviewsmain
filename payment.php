@@ -7,16 +7,16 @@ if($plan){
   $plan = cleanInput($plan);
   $plan = strtolower($plan);
     if($plan == cleanInput('basic')){
-      $amount = 1000;
+      $amount = 1000 * 0.8;
     } 
     else if($plan == cleanInput('advance')){
-      $amount = 1500;
+      $amount = 1500 * 0.8;
     } 
     else if($plan == cleanInput('premium')){
-      $amount = 2000;
+      $amount = 2000 * 0.8;
     }
     else {
-      $amount = 5000;
+      $amount = 5000 * 0.8;
     }
 }
 ?>

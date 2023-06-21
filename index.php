@@ -94,7 +94,7 @@ include_once 'admin-control/config.php';
        $row = $sql->fetch_assoc();
       //  $row['COUNT(id)'];
       ?>
-      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success breathe"><?= '23,586' ?></span> Contacts. And Counting...</h2>
+      <h2 class="display-5 text-center">Get Access to Over <span class="alert alert-success breathe"><?= '23586' + $row['COUNT(id)'] ?></span> Contacts. And Counting...</h2>
     </section>
     <!-- contact counting  -->
 <!-- About was here -->
