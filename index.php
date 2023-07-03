@@ -99,6 +99,17 @@ include_once 'admin-control/config.php';
     <!-- contact counting  -->
 <!-- About was here -->
 
+<script>
+  const breathe = document.querySelector('.breathe')
+  console.log(parseFloat(breathe.innerText))
+
+
+  const inc = setInterval(()=>{
+    let randNum = Math.floor(Math.random() * 8) + 1
+    breathe.innerText = parseFloat(breathe.innerText) + randNum
+  }, 100000)
+</script>
+
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients d-none">
       <div class="container" data-aos="zoom-out">
