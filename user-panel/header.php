@@ -7,20 +7,23 @@
                             <a href="index" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo.svg" alt="" height="22">
+                                    <img src="../assets/img/logo3.png" alt="" height="50">
                                 </span>
                                 <span class="logo-lg">
                                     <img src="assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="../assets/img/logo3.png" alt="" height="120">
                                 </span>
                             </a>
 
                             <a href="dashboard" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo-light.svg" alt="" height="22">
+                                    <img src="../assets/img/logo3.png" alt="" height="50">
                                 </span>
                                 <span class="logo-lg">
                                     <img src="../images/locale/logo.png" alt="" height="19">
-                                    <img src="../assets/images/Image 7.png" alt="" height="19">
-                                    <h1>Status Views</h1>
+                                    <!-- <h1>Status Views</h1> -->
+                                    <img src="../assets/img/logo3.png" alt="" height="120">
                                 </span>
                             </a>
                         </div>
@@ -192,6 +195,10 @@
                             </div>
                         </div>
 
+                        <div class='dropdown d-none d-lg-inline-block ms-1'>
+                            <a href='/' class='btn btn-success btn-lg d-block mr-4 my-2 w-100'><i class='fas fa-home'></i> &nbsp; Visit Home Page</a>
+                        </div>
+
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -224,6 +231,7 @@
                                 </a>
                             </div>
                         </div>
+                        
 
                         <div class="dropdown d-none d-lg-inline-block ms-1">
                             <!-- <button type="button" class="btn header-item noti-icon waves-effect"

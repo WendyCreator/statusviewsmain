@@ -221,7 +221,7 @@ include_once 'config.php';
                            
 
                             else{ 
-                                  $sql = formQuery("SELECT * FROM ceecontacts");
+                                  $sql = formQuery("SELECT * FROM ceeverified");
                                   if($sql->num_rows>0){ $num = 1;
                                       while($row=$sql->fetch_assoc()){
                                 

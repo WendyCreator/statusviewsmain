@@ -1,4 +1,5 @@
 <?php include_once 'head.php';
+include_once 'config.php';
   if(!isset($_SESSION['use%#5log#&45@ger%$#pa'])){
     header("Location:index");
 } elseif($_SESSION['use%#5log#&45@ger%$#pa'] != true){
@@ -127,11 +128,13 @@
                                     <div>
                                         <div class="row">
                                             <div class="col-7">
+                                                <!-- <a href=""> -->
                                                 <div class="text-primary p-3">
-                                                    <h5 class="text-primary">Welcome <?=$_SESSION['dplan']?> !</h5>
+                                                    <h5 class="text-primary">Welcome <?=$_SESSION['fullname']?> !</h5>
                                                     <p>Status Views Dashboard</p>
 
                                                 </div>
+                                                <!-- </a> -->
                                             </div>
                                             <div class="col-5 align-self-end">
                                                 <img src="assets/images/profile-img.png" alt="" class="img-fluid">
@@ -145,11 +148,13 @@
                                     <div>
                                         <div class="row">
                                             <div class="col-7">
+                                             <a href="view-contacts">
                                                 <div class="text-primary p-3">
                                                     <h5 class="text-primary">.... !</h5>
-                                                    <p>A place where God turns the common man to a first class citizen</p>
-
+                                                    <p> Download Contacts</p>
+                                                
                                                 </div>
+                                            </a>
                                             </div>
                                             <div class="col-5 align-self-end">
                                                 <img src="assets/images/profile-img.png" alt="" class="img-fluid">
@@ -163,11 +168,13 @@
                                     <div>
                                         <div class="row">
                                             <div class="col-7">
+                                                <a href="view-groups">
                                                 <div class="text-primary p-3">
                                                     <h5 class="text-primary">Status Views...!</h5>
-                                                    <p>All ROUND SETTLEMENT.</p>
+                                                    <p>Join Groups.</p>
 
                                                 </div>
+                                                </a>
                                             </div>
                                             <div class="col-5 align-self-end">
                                                 <img src="assets/images/profile-img.png" alt="" class="img-fluid">
@@ -177,13 +184,116 @@
                                 </div>
                             </div>
                            
-                            <div class="col-xl-12">
+                           
+
+                                <!-- ///////////////////// -->
+                                <div class='container'>
+                                    <div class='row my-4'>
+                                     <div class='col-12 borde'>
+                                        <h4 class='text-center my-4'>Active Groups</h4>
+                                     </div>
+                                    
+                                <?php 
+                                { 
+                                  $sql = formQuery("SELECT * FROM ceegroups LIMIT 4");
+                                  if($sql->num_rows>0){ $num = 1;
+                                      while($row=$sql->fetch_assoc()){
+                                
+                                          
+                                  ?>
+                                  <section class="col-xl-3 col-sm-6 col-12">
+                                  <div>
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <?php if($row['dstatus'] == 'active'){?>
+                                        <div class="alert alert-success" role="alert">
+                                                <i class="mdi mdi-check-all me-2"></i>
+                                                Active
+                                            </div>
+                                            <?php }
+                                            elseif($row['dstatus'] == 'suspended'){?>
+                                        <div class="alert alert-warning" role="alert">
+                                        <i class="mdi mdi-alert-outline me-2"></i>
+                                                Suspended
+                                            </div>
+                                            <?php }
+                                             elseif($row['dstatus'] == 'terminated'){?>
+                                        <div class="alert alert-danger" role="alert">
+                                        <i class="mdi mdi-block-helper me-2"></i>
+                                                Terminated
+                                            </div>
+                                            <?php }?>
+                                            <img class="rounded-circle avatar-sm" src="../admin-control/<?php echo ($row['gimage'] != 'no image')? $row['gimage'] :'assets/images/users/avatar-2.jpg'?>" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1 fullname"><a href="javascript: void(0);" class="text-dark"><?= $row['gtitle']?></a></h5>
+                                        <p class="text-muted">Group Admin:  <?=$row['groupadmin']?></p>
+                                        <p class="text-muted">Group Category:  <?=$row['gcategory']?></p>
+
+                                        <div>
+                                            <a href="<?=$row['grouplink']?>" class="btn btn-primary m-2" target="_blank">Join Group</a>
+                                            <!-- <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">ece</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">eee</a> -->
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20 d-none" >
+                                            <div class="flex-fill">
+                                                <a href="staff-profile?id=<?=$row['id']?>&userid=<?=$row['userid']?>"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="edit-staff?id=<?=$row['id']?>&userid=<?=$row['userid']?>"><i class="fas fa-pencil-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                            <button type="button" class='btn btn-lg' data-toggle="modal" data-target="#exampleModal<?=$row['id']?>"><i class="fas fa-trash text-danger"></i></button>
+
+
+                                                                                    <!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal<?=$row['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Delete File!</h5>
+        <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body px-5">
+      Are you sure you want to permanently delete this?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="delete-staff?id=<?=$row['id']?>&userid=<?=$row['userid']?>" class="btn btn-danger">Yes, Delete</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+                                            </div>
+
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                  </section>
+                            
+                            <?php }} }?>
+                              
+                            
+                          
+                        </div>
+                        </div>
+                                </div>
+                        <!-- end row -->
+                                <!-- //////////////////// -->
+
+                                <div class="col-xl-12">
                             <div class="card bg-primary bg-soft">
                                     <div>
                                         <div class="row">
                                             <div class="col-7">
                                                 <div class="text-primary p-3 text-center">
-                                                    <h5 class="text-primary">Quote of The Week</h5>
+                                                    <h5 class="text-primary">Status View Quote of The Week</h5>
                                                     <p>Quote here...</p>
                                                     <p>Quote Source here</p>
 

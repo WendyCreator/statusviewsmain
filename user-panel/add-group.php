@@ -33,13 +33,13 @@
                     <div class="container-fluid">
  
                         <!-- start page title -->
-                        <?php 
-                         if($_SESSION['checkermsg$%'] != true){
-                        ?>
+                        <!-- <?php 
+                         #if($_SESSION['checkermsg$%'] != true){
+                        ?> -->
 
-<h1 class="alert alert-warning text-center display-4 p-5">Please Complete Your registration to proceed</h1>
+<!-- <h1 class="alert alert-warning text-center display-4 p-5">Please Complete Your registration to proceed</h1> -->
 
-<?php }else{ ?>
+<!-- <?php # }else{ ?> -->
 
                         <?php if(isset($_SESSION['groupmsg']) and $_SESSION['groupmsg'] == 'Record inserted successfully!'){ ?>
                                            <div class="alert alert-success alert-dismissible fade show mb-2" role="alert">
@@ -240,7 +240,7 @@
                         </div> -->
                         <!-- end row -->
 
-                        <?php } ?>
+                        <!-- <?php // } ?> -->
 
                     </div> <!-- container-fluid -->
                 </div>

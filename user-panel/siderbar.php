@@ -92,9 +92,9 @@
                 <ul class="sub-menu" aria-expanded="false">
                     <?php 
                     if($_SESSION['checkermsg$%'] != true){ ?>
-                    <li><a href="add-member" key="t-inbox">Complete Registration</a></li>
+                    <!-- <li><a href="add-member" key="t-inbox">Complete Registration</a></li> -->
                     <?php } ?>
-                    <li><a href="add-contact" key="t-inbox">Add Contact</a></li>
+                    <!-- <li><a href="add-contact" key="t-inbox">Add Contact</a></li> -->
                     <li><a href="add-group" key="t-inbox">Add Group</a></li>
                     <!-- <li><a href="add-quote" key="t-read-email">Add Quote</a></li> -->
                 </ul>

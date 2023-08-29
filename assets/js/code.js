@@ -990,8 +990,14 @@ if(myPassword){
 
      genPassword()
 
-     document.querySelector('#email-address').addEventListener('change', (e)=>{
+     document.querySelector('#email-address').addEventListener('input', (e)=>{
       document.querySelector('#user-email').value = e.target.value
+    })
+     document.querySelector('#first-name').addEventListener('input', (e)=>{
+      document.querySelector('#user-name').value = e.target.value
+    })
+     document.querySelector('#phone').addEventListener('input', (e)=>{
+      document.querySelector('#user-phone').value = e.target.value
     })
 
     /////////////////

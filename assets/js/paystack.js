@@ -13,7 +13,7 @@ const msg = document.querySelector('#msg');
     // sk_live_604b6e1c4483de3c84b47a3a0fd530267209aac6
     // pk_live_2a7fc5a826139554484987f8bd8335a85d9a7856
       let handler = PaystackPop.setup({
-        key: 'pk_live_2a7fc5a826139554484987f8bd8335a85d9a7856', // Replaced with your public key
+        key: 'pk_test_51ad60a4075f779215f2d6dbe564138229d9f295', // Replaced with your public key
         email: document.getElementById("email-address").value,
         amount:(document.getElementById("amount").value) * 100,
         // ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you

@@ -457,10 +457,13 @@ platform, or have a question about a specific contact, we're here to assist you
 <section class="container mx-auto">
 
 <div class="row">
-  <div  class="col-12 my-4 bt bt-lg bt-success text-center shadow-sm py-4"  data-bs-toggle="collapse" data-bs-target="#showgroups" aria-expanded="false" aria-controls="showgroups">
+  <div  class="col-12 my-4 bt bt-lg bt-success text-center shadow-sm"  data-bs-toggle="collapse" data-bs-target="#showgroups" aria-expanded="false" aria-controls="showgroups">
     <h2 class="text-center text-success">Join Any Group of your choice</h2>
     <p>&dArr;</p>
   </div>
+  <div class="col-12 bg-dange">
+  <div class="row gx-5 bg-light mx-auto" style='width:80%;'>
+   
 <?php
     $sql = formQuery("SELECT * FROM ceegroups LIMIT 4");
     if($sql->num_rows>0){
@@ -472,21 +475,90 @@ platform, or have a question about a specific contact, we're here to assist you
     ?>
     <style>
       @media screen and (max-width: 700px){
-        .gropu{
+        .grop{
       /* max-width: 250px; */
       /* margin: auto; */
+      /* max-height: fit-content; */
     }
+      }
+
+      .child-1{
+        max-width: 192px;
+        aspect-ratio: 1/1;
+        /* background:red; */
+      }
+      .child-1 img {
+        max-width: 100%;
+        height: 100%;
+        object-fit:cover;
+        
       }
    
     </style>
+    <div class="col-12 col-md-6 col-lg-4 grop">
+    <section class="row collapse paren bg-white shadow-sm rounded py-0" id="showgroups">
+      <div class='col-12 bg-primary'>
+      <div class="alert alert-success d-non float-end" role="alert">
+                                                <i class="mdi mdi-check-all me-2"></i>
+                                                Active
+                                            </div>
+      </div>
+      <div class="col-12 bg-dange child-1 shado mx-auto my-2">
+      <img class="img-fluid rounded-circle avatar" src="./admin-control/<?php echo ($row['gimage'] != 'no image')? $row['gimage'] :''?>" alt="">
+      </div>
+      <div class="col-12 bg-primar child-2 shado mx-auto text-center">
+      <h4 class="text-muted font-bold px-2"> <?=$row['gcategory']?></h4>
+                               <?php if($row['dstatus'] == 'active'){?>
+                                        <div class="alert alert-success d-none float-end" role="alert">
+                                                <i class="mdi mdi-check-all me-2"></i>
+                                                Active
+                                            </div>
+                                            <?php }
+                                            elseif($row['dstatus'] == 'suspended'){?>
+                                        <div class="alert alert-warning d-none" role="alert">
+                                        <i class="mdi mdi-alert-outline me-2"></i>
+                                                Suspended
+                                            </div>
+                                            <?php }
+                                             elseif($row['dstatus'] == 'terminated'){?>
+                                        <div class="alert alert-danger d-none" role="alert">
+                                        <i class="mdi mdi-block-helper me-2"></i>
+                                                Terminated
+                                            </div>
+                                            <?php }?>
+                                           
+                                        <!-- </div> -->
 
-<section class="col-6 col-m-6 col-lg-3 mx-aut collapse" id="showgroups">
+                                        <div class="collaps bg-light" id="collapseExample<?=$row['id']?>">
+  <div class="car card-bod">
+  <p class="text-muted">Group Description:  <?=$row['gdesc']?></p> 
+  <p class="text-muted">Group Admin:  <?=$row['groupadmin']?></p>
+
+    <div>
+                                            <a href="<?=$row['grouplink']?>" class="btn btn-success m-2 btn-sm" target="_blank">Join Group</a>
+                                            
+                                        </div>
+  </div>
+</div>                          
+</div>                          
+
+                                        
+      
+    </section>
+    </div>
+    <?php } } ?>
+  </div>
+    </div>
+
+    </div>
+
+<!-- <section class="col-6 col-m-6 col-lg-3 mx-aut collapse d-none" id="showgroup">
                     <div class="my shadow-lg p-3 bg-dark gropu" data-aos="fade-up" style="width:fit-content;">
                         <div class="body" data-aos="fade-up" data-aos-delay="<?=$fade+=100?>">
                         <div class="mb">
                         <h4 class="text-muted font-bold"> <?=$row['gcategory']?></h4>
                                             <?php if($row['dstatus'] == 'active'){?>
-                                        <div class="alert alert-success d-none" role="alert">
+                                        <div class="alert alert-success d-non" role="alert">
                                                 <i class="mdi mdi-check-all me-2"></i>
                                                 Active
                                             </div>
@@ -504,9 +576,9 @@ platform, or have a question about a specific contact, we're here to assist you
                                             </div>
                                             <?php }?>
                                             <img class="img-fluid rounded avatar-s" src="./admin-control/<?php echo ($row['gimage'] != 'no image')? $row['gimage'] :''?>" alt="">
-                                        </div>
+                                        </div> -->
                                         <!-- <h5 class="font-size-15 mb-1 fullname"><a href="javascript: void(0);" class="text-dark"><?= $row['gtitle']?></a></h5> -->
-                                        <p class="text-muted">Group Title:  <?=limit_text($row['gtitle'])?></p>
+                                        <!-- <p class="text-muted">Group Title:  <?=limit_text($row['gtitle'])?></p>
 
                                         <p>
   
@@ -530,19 +602,23 @@ platform, or have a question about a specific contact, we're here to assist you
                                         
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <?php } } ?>
+           <!-- /////////////////// -->
+           
      
-    <div>
+    <!-- <div>
                                             <a href="groups" class="btn btn-success btn-lg m-2">See More Groups</a>
                                             
-                                        </div>
-            </div>
+                                        </div> -->
+            <!-- </div>
            </div>
         </div>
-    </div>
+    </div> -->
+    
   </section>
+
+  
 
     <!-- Group Section ends -->
 

@@ -13,13 +13,31 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(isset($_POST['user-email'])){
         
 
-        // Add Event title
+        // Add email
         
         if(empty($_POST['user-email'])){
             $_SESSION['verifymsg'] = "Please Add Contact Email";
             $error = true;
         }else{
             $email = cleanInputField('user-email');
+        }
+
+        // Username 
+
+        if(empty($_POST['user-name'])){
+            $_SESSION['verifymsg'] = "Please Add Contact Member name";
+            $error = true;
+        }else{
+            $name = cleanInputField('user-name');
+        }
+
+        if(empty($_POST['user-phone'])){
+            $_SESSION['verifymsg'] = "Please Add Contact Member Phone number";
+            $error = true;
+        }else{
+
+            $phone = cleanInputField('user-phone');
+
         }
 
      
@@ -49,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         //run SQL here.... 
     
         
-        $sql = formQuery("INSERT INTO ceeverified SET demail ='$email', dplan ='$plan', memberid= '$userid', dpassword= '$password', ddata= '$ddata', damount = '$amount'");
+        $sql = formQuery("INSERT INTO ceeverified SET demail ='$email', dplan ='$plan', fullname ='$name', dphone ='$phone', memberid= '$userid', dpassword= '$password', ddata= '$ddata', damount = '$amount'");
         
         if($sql){
             $_SESSION['verifymsg'] = " Verification Successfull. Your password has been sent to your email!";

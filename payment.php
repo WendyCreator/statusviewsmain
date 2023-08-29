@@ -89,9 +89,10 @@ if($plan){
             <form id="user-details" method="post">
               <input type="hidden" id="password" name="password">
               <input type="hidden" id="user-email" name="user-email">
+              <input type="hidden" id="user-name" name="user-name">
+              <input type="hidden" id="user-phone" name="user-phone">
               <input type="hidden" id="user-plan" name="plan1" value="<?=$plan?>">
-              <input type="hidden" id="amount-paid" name="amount-paid"   value="<?=isset($amount)?$amount:2000;?>">
-              
+              <input type="hidden" id="amount-paid" name="amount-paid" value="<?=isset($amount)?$amount:2000;?>">
               </form>
            </div>
           </div>

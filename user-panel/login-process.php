@@ -28,6 +28,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 $_SESSION['password'] = $row['ddata'];
                 $_SESSION['image']=$row['dimage'];
                 $_SESSION['fullname']=$row['fullname'];
+                $_SESSION['memberid']=$row['memberid'];
 
                 $checkpass = $_SESSION['password']; 
                 $checkemail = $_SESSION['email']; 

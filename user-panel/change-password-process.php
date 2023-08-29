@@ -5,6 +5,7 @@
 
     // $userid = $_SESSION['userid'];
     $email = $_SESSION['email'];
+    $memberid = $_SESSION['memberid'];
 
     if(isset($_POST['change'])){
         // $old = md5(cleanInputField("oldpass"));
@@ -23,9 +24,9 @@
 
           if($sql->num_rows>0){
             //
-            $set1 = formQuery("UPDATE ceecontacts SET dpassword ='$pass' WHERE demail='$email'");
-            $set2 = formQuery("UPDATE ceeverified SET dpassword ='$pass' WHERE demail='$email'");
-            $set3 = formQuery("UPDATE ceemembers SET dpassword ='$pass' WHERE demail='$email'");
+            $set1 = formQuery("UPDATE ceecontacts SET dpassword ='$pass' WHERE demail='$email' AND memberid = '$memberid'");
+            $set2 = formQuery("UPDATE ceeverified SET dpassword ='$pass' WHERE demail='$email' AND memberid = '$memberid'");
+            $set3 = formQuery("UPDATE ceemembers SET dpassword ='$pass' WHERE demail='$email' AND memberid = '$memberid'");
           if($set1 and $set2 and $set3){
             $_SESSION['err'] = "<p class='text-success'>Password changed successfully!</p>";
             header("Location: logout");
